@@ -66,6 +66,159 @@ class LinkedInList:
 
         
         for i in range(find_data - 1):
+
+
+
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data#initializes data
+        self.next = None#points to next node which is none
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_end(self, data):
+        new_node = Node(data)
+
+        if self.head == None:
+            self.head = new_node
+            return "added"
+
+        current = self.head
+
+        while current.next != None:
+            current = current.next
+
+        current.next = new_node
+
+    def display(self):
+        current = self.head
+
+        while current != None:
+            print(current.data)
+            current = current.next
+        print("Done traversing")
+
+    def insert_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def search(self, target):
+        current = self.head
+        while current != None:
+            if current.data == target:
+                return True
+
+            current = current.next
+        return False
+
+    def delete(self, target):
+        if self.head == None:
+            return "List is empty"
+        
+        if self.head.data == target:
+            self.head = self.head.next
+            return "Deleted"
+
+        previous = self.head
+        current = self.head.next
+
+        while current != None:
+            if current.data == target:
+                previous.next = current.next
+            return "Deleted"
+
+        previous = current 
+        current = current.next
+
+        return "Value not found"
+
+
+
+students = LinkedList()
+
+students.insert_end(1001)
+students.insert_end(1002)
+students.insert_end(1003)
+students.insert_end(1004)
+students.insert_end(1005)
+
+students.display()
+
+def insert_beginning(self, data):
+    new_node = Node(data)
+    new_node.next = self.head
+    self.head = new_node
+
+def insert_end(self, data):
+    new_node = Node(data)
+
+    if self.head == None:
+        self.head = new_node
+        return "added"
+
+    current = self.head
+    while current.next != None:
+        current = current.next
+    current.next = new_node
+
+
+stud = LinkedList()
+
+stud.insert_end(10)
+stud.insert_end(20)
+
+def search(self, target):
+    current = self.head
+
+    while current != None:
+        if current.data == target:
+            return True
+
+        current = current.next
+
+    return False
+
+def delete(self, target):
+    if self.head == None:
+        return "List is empty"
+
+    if self.head.data == target:
+        self.head = self.head.next
+        return "Deleted"
+
+    previous = self.head
+    current = self.head.next
+
+    while current != None:
+        if current.data == target:
+            previous.next = current.next
+            return "Deleted"
+
+        previous = current
+        current = current.next
+
+    return "value not found"
+
+stud.delete(20)
+
+stud.display()
+
+def search(self, target):
+    current = self.head
+
+    while current != None:
+        if current.data == target:
+            return True
+        current = current.next
+    return False
+
+
             
 
 
