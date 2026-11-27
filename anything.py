@@ -333,3 +333,184 @@ class Stack:
             return "Stack is empty"
         
         return self.stack[-1]
+
+
+
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert(self, data):
+        new_node = Node(data)
+
+        if self.head == None:
+            self.head = new_node
+            return "added"
+
+        current= self.head
+
+        while current.next != None:
+            current = current.next
+
+        current.next = new_node
+
+    def display(self):
+        current = self.head
+
+        while current != None:
+            print(current.data,", ")
+            current = current.next
+
+
+    def search(self, target):
+        if self.head.data == target:
+            return True
+
+        current = self.head
+
+        while current != None:
+            if current.data == target:
+                print("Value found..")
+            current = current.next
+        return False
+
+    def insert_beginning(self, data):
+        new_node = Node(data)
+
+        new_node.next = self.head
+        self.head = new_node
+
+    def insert_end(self, data):
+        new_node = Node(data)
+        current = self.head
+
+        if self.head == None:
+            self.head = new_node
+            return "done"
+
+        while current.next != None:
+            current = current.next
+        current.next = new_node
+
+###STACKS
+#push()- adds to stack
+#pop()- removes from stack
+#peek() - view the top element
+#isEmpty() - check whether the stack is empty
+
+stack = []
+
+stack.append(10)
+stack.append(20)
+stack.append(30)
+
+print(stack)
+
+stack.pop()
+
+print(stack[-1])
+
+if len(stack) == 0:
+    print("Tis wmpty")
+else:
+    print("Stack is not empty")
+
+
+class Stack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, data):
+        self.stack.append(data)
+
+    def pop(self):
+        if len(self.stack) == 0:
+            return "Stack is empty"
+
+        return self.stack.pop()
+
+    def peek(self):
+        if len(self.stack) == 0:
+            return "Stack is emptyyy."
+
+        return self.stack[-1]
+
+    def is_empty(self):
+        if len(self.stack) == 0:
+            return True 
+        else:
+            return False
+
+
+class Stack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, data):
+        self.stack.append(data)
+
+    def pop(self):
+        if len(self.stack) == 0:
+            return "Tis is empty"
+
+        return self.stack.pop()
+
+    def peek(self):
+        if len(self.stack) == 0:
+            return "Thy stack is empty"
+
+        return self.stack[-1]
+
+    def is_empty(self):
+        if len(self.stack) == 0:
+            return True
+        else:
+            return False
+
+
+#with stack overflow and underflow
+class Stack:
+    def __init__(self, capacity):
+        self.stack = []
+        self.capacity = capacity
+
+    def push(self, data):
+        if len(self.stack) == self.capacity:
+            return "Stack Overflow"
+
+        self.stack.append(data)
+
+    def pop(self):
+        if len(self.stack) == 0:
+            return "Stack Underflow"
+
+        return self.stack.pop()
+
+
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class TreeNode:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+    def preOrderTraversal(node):
+        if node == None:
+            return 
+        print(node.data, end=", ")
+        preOrderTraversal(node.left)
+        preOrderTraversal(node.right)
