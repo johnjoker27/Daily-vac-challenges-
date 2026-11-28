@@ -514,3 +514,39 @@ class TreeNode:
         print(node.data, end=", ")
         preOrderTraversal(node.left)
         preOrderTraversal(node.right)
+
+class stack:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.stack = [None] * capacity
+        self.top = -1
+
+    def push(self, data):
+        if self.top == self.capacity - 1:
+            return "Stack Overflow."
+
+        self.top += 1
+
+        self.stack[self.top] = data
+
+    def pop(self):
+        if self.top == - 1:
+            return "Stack Underflow"
+
+        popped = self.stack[self.top]
+
+        self.top -= 1
+
+        return popped
+
+    def peek(self):
+        if self.top == - 1:
+            return "Stack Underflow"
+
+        return self.stack[self.top]
+
+    def is_empty(self):
+        if self.top == -1:
+            return True
+        else:
+            return False
